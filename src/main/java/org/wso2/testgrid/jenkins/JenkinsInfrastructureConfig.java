@@ -24,6 +24,9 @@ import hudson.model.Descriptor;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 public final class JenkinsInfrastructureConfig implements Describable<JenkinsInfrastructureConfig> {
+
+    @Extension
+    public static final DescriptorImpl DESCRIPOR = new DescriptorImpl();
     public String bucket;
 
     @DataBoundConstructor
@@ -36,31 +39,12 @@ public final class JenkinsInfrastructureConfig implements Describable<JenkinsInf
         return DESCRIPOR;
     }
 
-    @Extension
-    public static final DescriptorImpl DESCRIPOR = new DescriptorImpl();
-
-    public static class DescriptorImpl extends  Descriptor<JenkinsInfrastructureConfig> {
+    public static class DescriptorImpl extends Descriptor<JenkinsInfrastructureConfig> {
 
         @Override
         public String getDisplayName() {
             return "File to upload";
         }
-//
-//            public ListBoxModel doFillStorageClassItems() {
-//                final ListBoxModel model = new ListBoxModel();
-//                for (String s : storageClasses) {
-//                    model.add(s, s);
-//                }
-//                return model;
-//            }
-//
-//            public ListBoxModel doFillSelectedRegionItems() {
-//                final ListBoxModel model = new ListBoxModel();
-//                for (Region r : regions) {
-//                    model.add(r.getName(), r.getName());
-//                }
-//                return model;
-//            }
     }
 
 }
