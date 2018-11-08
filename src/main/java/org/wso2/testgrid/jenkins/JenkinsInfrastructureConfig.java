@@ -26,7 +26,7 @@ import org.kohsuke.stapler.DataBoundConstructor;
 public final class JenkinsInfrastructureConfig implements Describable<JenkinsInfrastructureConfig> {
 
     @Extension
-    public static final DescriptorImpl DESCRIPOR = new DescriptorImpl();
+    public static final DescriptorImpl DESCRIPTOR = new DescriptorImpl();
     public String bucket;
 
     @DataBoundConstructor
@@ -36,7 +36,7 @@ public final class JenkinsInfrastructureConfig implements Describable<JenkinsInf
 
     @Override
     public Descriptor<JenkinsInfrastructureConfig> getDescriptor() {
-        return DESCRIPOR;
+        return DESCRIPTOR;
     }
 
     public static class DescriptorImpl extends Descriptor<JenkinsInfrastructureConfig> {
