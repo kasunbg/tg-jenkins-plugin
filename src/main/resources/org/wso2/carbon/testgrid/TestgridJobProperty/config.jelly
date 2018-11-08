@@ -1,0 +1,28 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <f:section title="Testgrid">
+        <f:entry title="${%Name}" field="infra">
+            <f:textbox name="infra" value="${it.infra}"/>
+        </f:entry>
+    </f:section>
+
+    <!--<f:entry title="${%Name}" field="name">-->
+    <!--<f:textbox />-->
+    <!--</f:entry>-->
+    <!--<f:advanced>-->
+    <!--<f:entry title="${%French}" field="useFrench"-->
+    <!--description="${%FrenchDescr}">-->
+    <!--<f:checkbox />-->
+    <!--</f:entry>-->
+    <!--</f:advanced>-->
+
+    <!--<l:layout title="TESTS">-->
+    <!--<l:main-panel>-->
+    <!--<div style="float:right; background-color:white; z-index: 1; position:relative; margin-left: 1em">-->
+    <!--<div style="margin-top:1em">-->
+    <!--<h1>TEST 1</h1>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</l:main-panel>-->
+    <!--</l:layout>-->
+</j:jelly>

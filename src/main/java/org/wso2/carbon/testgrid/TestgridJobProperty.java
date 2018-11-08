@@ -18,20 +18,32 @@
 package org.wso2.carbon.testgrid;
 
 import hudson.Extension;
-import hudson.model.Descriptor;
 import hudson.model.Job;
 import hudson.model.JobProperty;
 import hudson.model.JobPropertyDescriptor;
 import net.sf.json.JSONObject;
+import org.jenkinsci.Symbol;
+import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 import javax.annotation.Nonnull;
 
-public final class TGJobProperty extends JobProperty<Job<?,?>>{
+public final class TestgridJobProperty extends JobProperty<Job<?, ?>> {
 
+    private String infra;
 
+    @DataBoundConstructor
+    public TestgridJobProperty(String infra) {
+        this.infra = infra;
+    }
+
+    public String getInfra() {
+        return infra;
+    }
+
+    @Symbol("testgrid")
     @Extension
-    public static class PropertyImpl extends JobPropertyDescriptor{
+    public static class PropertyImpl extends JobPropertyDescriptor {
 
         @Override
         public boolean isApplicable(Class<? extends Job> jobType) {
