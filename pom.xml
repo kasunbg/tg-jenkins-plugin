@@ -38,14 +38,13 @@
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-step-api</artifactId>
-            <version>2.12</version>
-            <scope>test</scope>
+            <artifactId>workflow-cps</artifactId>
+            <version>2.39</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-cps</artifactId>
-            <version>2.39</version>
+            <artifactId>workflow-step-api</artifactId>
+            <version>2.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
