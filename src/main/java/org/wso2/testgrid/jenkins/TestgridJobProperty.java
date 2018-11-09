@@ -47,7 +47,7 @@ public final class TestgridJobProperty extends JobProperty<Job<?, ?>> {
             testgridYamlSB.append("    - repository: ").append(infrastructureConfig.gitURL).append('\n');
             testgridYamlSB.append("      repositoryBranch: ").append(infrastructureConfig.gitBranch).append('\n');
             testgridYamlSB.append("      file: ").append(infrastructureConfig.file).append('\n');
-            testgridYamlSB.append("      type: ").append(infrastructureConfig.iacProvider).append('\n');
+//            testgridYamlSB.append("      type: ").append(infrastructureConfig.iacProvider).append('\n');
         }
         this.testgridYaml = testgridYamlSB.toString();
     }
