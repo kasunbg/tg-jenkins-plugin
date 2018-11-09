@@ -33,13 +33,30 @@ public final class TestgridJobProperty extends JobProperty<Job<?, ?>> {
 
     private final List<JenkinsInfrastructureConfig> infrastructureConfigs;
 
+
+    private final String testgridYaml;
+
     @DataBoundConstructor
-    public TestgridJobProperty(String infra, List<JenkinsInfrastructureConfig> infrastructureConfigs) {
+    public TestgridJobProperty(List<JenkinsInfrastructureConfig> infrastructureConfigs) {
         this.infrastructureConfigs = infrastructureConfigs;
+
+        // PoC testgrid yaml content. This is not the actual format.
+        StringBuilder testgridYamlSB = new StringBuilder("infrastructureConfig:\n");
+        testgridYamlSB.append("  provisioners:\n");
+        for (JenkinsInfrastructureConfig infrastructureConfig : infrastructureConfigs) {
+            testgridYamlSB.append("    - repository: ").append(infrastructureConfig.gitURL).append('\n');
+            testgridYamlSB.append("      repositoryBranch: ").append(infrastructureConfig.gitBranch).append('\n');
+            testgridYamlSB.append("      type: ").append(infrastructureConfig.iacProvider).append('\n');
+        }
+        this.testgridYaml = testgridYamlSB.toString();
     }
 
     public List<JenkinsInfrastructureConfig> getInfrastructureConfigs() {
         return infrastructureConfigs;
+    }
+
+    public String getTestgridYaml() {
+        return testgridYaml;
     }
 
     @Symbol("testgrid")
