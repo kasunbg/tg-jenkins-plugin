@@ -27,11 +27,18 @@ public final class JenkinsInfrastructureConfig implements Describable<JenkinsInf
 
     @Extension
     public static final DescriptorImpl DESCRIPTOR = new DescriptorImpl();
-    public String bucket;
+    public String iacProvider;
+    public String gitURL;
+    public String gitBranch;
+    public String file;
+
 
     @DataBoundConstructor
-    public JenkinsInfrastructureConfig(String bucket) {
-        this.bucket = bucket;
+    public JenkinsInfrastructureConfig(String iacProvider, String gitURL, String gitBranch, String file) {
+        this.iacProvider = iacProvider;
+        this.gitURL = gitURL;
+        this.gitBranch = gitBranch;
+        this.file = file;
     }
 
     @Override
@@ -43,7 +50,7 @@ public final class JenkinsInfrastructureConfig implements Describable<JenkinsInf
 
         @Override
         public String getDisplayName() {
-            return "File to upload";
+            return "Infrastructure provision configuration";
         }
     }
 

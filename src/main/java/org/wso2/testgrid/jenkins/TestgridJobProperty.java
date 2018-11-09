@@ -31,21 +31,15 @@ import javax.annotation.Nonnull;
 
 public final class TestgridJobProperty extends JobProperty<Job<?, ?>> {
 
-    private final List<JenkinsInfrastructureConfig> entries;
-    private String infra;
+    private final List<JenkinsInfrastructureConfig> infrastructureConfigs;
 
     @DataBoundConstructor
-    public TestgridJobProperty(String infra, List<JenkinsInfrastructureConfig> entries) {
-        this.infra = infra;
-        this.entries = entries;
+    public TestgridJobProperty(String infra, List<JenkinsInfrastructureConfig> infrastructureConfigs) {
+        this.infrastructureConfigs = infrastructureConfigs;
     }
 
-    public String getInfra() {
-        return infra;
-    }
-
-    public List<JenkinsInfrastructureConfig> getEntries() {
-        return entries;
+    public List<JenkinsInfrastructureConfig> getInfrastructureConfigs() {
+        return infrastructureConfigs;
     }
 
     @Symbol("testgrid")

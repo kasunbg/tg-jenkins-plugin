@@ -19,16 +19,17 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
     <j:set var="currentFruit" value="${it.fruit}"/>
 
-    <f:entry field="iacProvider" title="Git repository URL" description="Infrastructure-as-Code provider" >
+    <f:entry field="iacProvider" title="Infrastructure as Code Provider"
+             description="Valid values: CLOUDFORMATION, SHELL" >
         <f:textbox/>
     </f:entry>
-    <f:entry field="gitBranch" description="" title="Git branch">
+    <f:entry field="gitURL" description="" title="Git URL">
+        <f:textbox/>
+    </f:entry>
+    <f:entry field="gitBranch" description="" title="Git Branch">
         <f:textbox default="*/master"/>
     </f:entry>
-    <f:entry field="file" title="File" description="relative path to the infra script" >
-        <f:textbox/>
-    </f:entry>
-    <f:entry field="file" title="File" description="" >
+    <f:entry field="file" title="Script path" description="relative path to the infra script" >
         <f:textbox/>
     </f:entry>
 </j:jelly>
